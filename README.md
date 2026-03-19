@@ -25,13 +25,17 @@ This project demonstrates how to generate **photorealistic product photography**
 
 <div align="center">
 
-| Dark Studio — Dramatic Red Lighting | Golden Hour — Rooftop |
+| Dark Marble Studio | Mountain Sunset |
 |:---:|:---:|
-| ![Dark Studio](outputs/ComfyUI_temp_jusvt_00021_.png) | ![Golden Hour](outputs/ComfyUI_temp_jusvt_00023_.png) |
+| ![Dark Marble](outputs/ComfyUI_temp_jusvt_00002_.png) | ![Mountain Sunset](outputs/ComfyUI_temp_jusvt_00005_.png) |
 
-| Ancient Stone — Outdoor Natural Light | Warm Amber — Luxury Interior |
+| Ice Bowl — Dramatic Red | Dark Studio — Pedestal |
 |:---:|:---:|
-| ![Ancient Stone](outputs/ComfyUI_temp_jusvt_00036_.png) | ![Warm Interior](outputs/ComfyUI_temp_jusvt_00038_.png) |
+| ![Ice Bowl](outputs/ComfyUI_temp_jusvt_00019_.png) | ![Dark Pedestal](outputs/ComfyUI_temp_jusvt_00021_.png) |
+
+| Smoke & Spotlight | Model Shot — Editorial |
+|:---:|:---:|
+| ![Smoke](outputs/ComfyUI_temp_jusvt_00024_.png) | ![Model Shot](outputs/ComfyUI_temp_jusvt_00030_.png) |
 
 </div>
 
@@ -41,9 +45,9 @@ This project demonstrates how to generate **photorealistic product photography**
 
 <div align="center">
 
-https://github.com/GuruCharan6/AI-Product-Photography-using-LoRA/assets/demo/Creating%20Realistic%20Product%20Photography%20with%20Custom%20LoRa%20in%20Confi%20UI%20-%20Copy.mp4
+**[▶ Watch the complete ComfyUI workflow walkthrough](demo/Creating%20Realistic%20Product%20Photography%20with%20Custom%20LoRa%20in%20Confi%20UI%20-%20Copy.mp4)**
 
-> *Watch the complete ComfyUI workflow — from LoRA loading to final image generation*
+> *From LoRA loading to final image generation — step by step inside ComfyUI*
 
 </div>
 
@@ -52,13 +56,13 @@ https://github.com/GuruCharan6/AI-Product-Photography-using-LoRA/assets/demo/Cre
 ## Pipeline Overview
 
 ```
-Synthetic Image Generation
+Synthetic Image Generation (AI-generated training data)
          ↓
   LoRA Training on FLUX.1 Dev
          ↓
   ComfyUI Workflow Assembly
          ↓
-  Product Photography Generation
+  Product Photography Generation in any environment
 ```
 
 ---
@@ -109,7 +113,7 @@ UNETLoader (flux1-dev)
        ↓
 LoraLoaderModelOnly (product-lora, strength=1.0)
        ↓
-KSampler ←── FluxGuidance (cfg=3.5)
+KSampler ←── FluxGuidance (guidance=3.5)
     ↑              ↑
 EmptyLatent    CLIPTextEncode (positive prompt)
 (1024×1024)    CLIPTextEncode (negative prompt)
@@ -140,7 +144,7 @@ Both encoders work together to give FLUX.1 its exceptional prompt adherence.
 
 ### Why FluxGuidance instead of CFG?
 
-FLUX.1 Dev uses **FluxGuidance** (set to `3.5`) instead of the traditional Classifier-Free Guidance scale. This is specific to the FLUX architecture and produces sharper, more prompt-accurate results than standard CFG.
+FLUX.1 Dev uses **FluxGuidance** (set to `3.5`) instead of traditional Classifier-Free Guidance. This is specific to the FLUX architecture and produces sharper, more prompt-accurate results than standard CFG.
 
 ---
 
@@ -175,15 +179,16 @@ The LoRA handles the product consistency — the prompt only needs to describe t
 
 ---
 
-## Files
+## Repo Structure
 
-| Folder/File | Description |
-|---|---|
-| `dataset/` | AI-generated synthetic training images |
-| `outputs/` | Final generated product photos |
-| `demo/` | Workflow demo video |
-| `assets/` | Supporting assets |
-| `ProductLoRA Workflow.json` | ComfyUI workflow — drag and drop to reproduce |
+```
+AI-Product-Photography-using-LoRA/
+├── outputs/        ← All generated product images
+├── dataset/        ← AI-generated synthetic training images
+├── demo/           ← Workflow walkthrough video
+├── assets/         ← Supporting assets
+└── ProductLoRA Workflow.json   ← ComfyUI workflow file
+```
 
 📋 [Download ComfyUI Workflow](./ProductLoRA%20Workflow.json)
 
