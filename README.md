@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📸 AI Product Photography with Custom LoRA — FLUX.1 Dev
+# 📸 AI Product Photography with Custom LoRA
 
 **Studio-quality product photography generated entirely with AI — no camera, no studio, no photographer.**
 
@@ -23,13 +23,29 @@ This project demonstrates how to generate **photorealistic product photography**
 
 ## Results
 
+<div align="center">
+
 | Dark Studio — Dramatic Red Lighting | Golden Hour — Rooftop |
-|---|---|
-| ![Dark Studio](assets/ComfyUI_temp_jusvt_00021_.png) | ![Golden Hour](assets/ComfyUI_temp_jusvt_00023_.png) |
+|:---:|:---:|
+| ![Dark Studio](outputs/ComfyUI_temp_jusvt_00021_.png) | ![Golden Hour](outputs/ComfyUI_temp_jusvt_00023_.png) |
 
 | Ancient Stone — Outdoor Natural Light | Warm Amber — Luxury Interior |
-|---|---|
-| ![Ancient Stone](assets/ComfyUI_temp_jusvt_00036_.png) | ![Warm Interior](assets/ComfyUI_temp_jusvt_00038_.png) |
+|:---:|:---:|
+| ![Ancient Stone](outputs/ComfyUI_temp_jusvt_00036_.png) | ![Warm Interior](outputs/ComfyUI_temp_jusvt_00038_.png) |
+
+</div>
+
+---
+
+## 🎬 Demo — Full Workflow Walkthrough
+
+<div align="center">
+
+https://github.com/GuruCharan6/AI-Product-Photography-using-LoRA/assets/demo/Creating%20Realistic%20Product%20Photography%20with%20Custom%20LoRa%20in%20Confi%20UI%20-%20Copy.mp4
+
+> *Watch the complete ComfyUI workflow — from LoRA loading to final image generation*
+
+</div>
 
 ---
 
@@ -159,11 +175,17 @@ The LoRA handles the product consistency — the prompt only needs to describe t
 
 ---
 
-## Demo
+## Files
 
-🎬 [Watch the full workflow walkthrough](./Creating%20Realistic%20Product%20Photography%20with%20Custom%20LoRa%20in%20Confi%20UI%20-%20Copy.mp4)
+| Folder/File | Description |
+|---|---|
+| `dataset/` | AI-generated synthetic training images |
+| `outputs/` | Final generated product photos |
+| `demo/` | Workflow demo video |
+| `assets/` | Supporting assets |
+| `ProductLoRA Workflow.json` | ComfyUI workflow — drag and drop to reproduce |
 
-📋 [ComfyUI Workflow JSON](./ProductLoRA_Workflow.json)
+📋 [Download ComfyUI Workflow](./ProductLoRA%20Workflow.json)
 
 ---
 
